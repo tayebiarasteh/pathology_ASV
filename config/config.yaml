@@ -1,0 +1,45 @@
+preprocessing:
+  vad_window_length: 30 # window length of 30 ms
+  vad_moving_average_width: 8
+  vad_max_silence_length: 6 # a maximum silence length of 6 ms
+  audio_norm_target_dBFS: -30 # pruning the intervals with sound pressures below 30 db
+  sr: 16000 # sampling rate
+  nfft: 512 # should be power of 2; here we have 16000* 0.025 = 400 samples per frame, so at least should be 512
+  window: 0.025 # each frame is 25 ms = window size
+  hop: 0.01 # 10 ms step size to move the window
+  nmels: 40 # total number of mel filters
+  tisv_frame: 180 # min frame number; each frame is 400 samples; 180 * 400 = 72k samples; 72k / 16k = 4.5 s is the minimum length of one full training utterance
+  n_frame_test: 160
+Network:
+  seed: 1
+  lr: 1e-4 # learning rate for plakss
+  hidden_dim: 768  # Number of LSTM hidden layer units
+  output_dim: 256 # Embedding size
+  num_layers: 3  # Number of LSTM layers
+  N: 16 # batch_size, Number of speakers in batch
+  M: 8 # number of utterances per speaker; Must be even because we use the half for enrolment
+  M_valid: 6 # number of utterances per speaker in validation; Must be even because we use the half for enrolment
+  N_valid: 16 # batch_size, Number of speakers in batch
+  M_test: 4 # number of utterances per speaker in test; Must be even because we use the half for enrolment
+  weight_decay: 0
+  amsgrad: False
+network_output_path: network_data/
+output_data_path: output_data/
+tb_logs_path: tensor_board_logs/
+stat_log_path: stat_logs/
+dvectors_path: dvectors/
+checkpoint_name: checkpoint.tar
+trained_model_name: trained_model.pth
+
+
+file_path: /PATH/
+target_dir: /PATH/
+master_list_train_name: master_list_train
+master_list_valid_name: master_list_valid
+verbmobil_master_list_train_name: tisv_preprocessVerbMobil_master_list_train
+verbmobil_master_list_valid_name: tisv_preprocessVerbMobil_master_list_valid
+network_save_freq: 1 # number of training epochs to save the model and loss
+network_checkpoint_freq: 1 # number of training epochs to save a checkpoint
+valid_iteration_freq: 1  # better to be 1 as it's epoch based; This also shows number of iterations after which we print the metrics
+num_epochs: 2 # total number of iterations of training
+num_valid_epochs: 5 # important for TISV GE2E to average over some iterations to decide for better validation

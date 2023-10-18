@@ -1,0 +1,28 @@
+name: pathology_ASV
+channels:
+  - defaults
+  - pytorch
+  - nvidia
+  - conda-forge
+dependencies:
+  - python=3.9
+  - pytorch::pytorch=1.13
+  - pytorch::pytorch-cuda
+  - pytorch::torchvision
+  - omegaconf
+  - torchmetrics
+  - fvcore
+  - iopath
+  - matplotlib 
+  - tqdm
+  - tensorboardx
+  - pandas
+  - scikit-learn
+  - jupyter
+  - pip
+  - pip:
+    - torchio
+    - soundfile
+    - tensorboard
+    - webrtcvad
+    - librosa
