@@ -4,8 +4,7 @@
 Overview
 ------
 
-* This is the official repository of the paper [**The effect of speech pathology on automatic speaker verification: A large-scale study**](https://arxiv.org/abs/2204.06450).
-* Pre-print version: [https://arxiv.org/abs/2204.06450](https://arxiv.org/abs/2204.06450)
+* This is the official repository of the paper [**The effect of speech pathology on automatic speaker verification: a large-scale study**](https://www.nature.com/articles/s41598-023-47711-7).
 
 Abstract
 ------
@@ -47,14 +46,17 @@ Our source code for training and evaluation of the deep neural networks, speech 
 ------
 ### In case you use this repository, please cite the original paper:
 
-S. Tayebi Arasteh, T. Weise, M. Schuster, et al. *The effect of speech pathology on automatic speaker verification: A large-scale study*. arxiv.2204.06450, https://doi.org/10.48550/arXiv.2204.06450, 2022.
+Tayebi Arasteh S, Weise T, Schuster M, et al. *The effect of speech pathology on automatic speaker verification: a large-scale study*. Scientific Reports (2023) 13:20476. 
+https://doi.org/10.1038/s41598-023-47711-7
 
 ### BibTex
 
     @article {pathology_asv,
       author = {Tayebi Arasteh, Soroosh and Weise, Tobias, and Schuster, Maria and Noeth, Elmar and Maier, Andreas and Yang, Seung Hee},
-      title = {The effect of speech pathology on automatic speaker verification: A large-scale study},
-      year = {2022},
-      doi = {10.48550/arXiv:2204.06450},
-      journal = {arXiv}
+      title = {The effect of speech pathology on automatic speaker verification: a large-scale study},
+      year = {2023},
+      pages = {20476},
+      volume = {13},
+      doi = {https://doi.org/10.1038/s41598-023-47711-7},
+      journal = {Scientific Reports}
     }
